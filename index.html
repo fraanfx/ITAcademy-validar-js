@@ -19,7 +19,7 @@
                     <h2 class="display-6 fw-bold text-center py-5">
                         Inicia Sessió
                     </h2>
-                    <form method="POST" id="loginForm" onsubmit="return loginCredentials()" name="loginForm">
+                    <form method="POST"  action="javascript:void(0);" id="loginForm" onsubmit="return loginCredentials()" name="loginForm">
                         
                     <div class="mb-3  py-2">
                 
@@ -29,47 +29,48 @@
                     <div class="mb-3  py-2">
                    
                     <input type="password" class="form-control" id="inputPass" placeholder="Contraseña">
-                    <div class="invalid-feedback" id="errorPass"></div>
+                    <div class="invalid-feedback" id="errorPassword"></div>
                 </div>
                     
                     <div class="d-grid  py-3">
                         <button type="submit" class="btn btn-primary">Enviar</button>
                     </div>
                     
-                    <label class="form-check-label text-primary  py-2" for="exampleCheck1">¿Heu oblidat la contraseña?</label>
+                    <label class="form-check-label text-primary  py-2">¿Heu oblidat la contraseña?</label>
                 </form>
             </div>
             <div class="col col-lg-6">
-                <form>
+                <form method="POST"  action="javascript:void(0);" id="registerForm" onsubmit="return registerCredentials()" name="loginForm">
                     <h2 class="display-6 fw-bold text-center py-5">
                         Crea un compte
                     </h2>
                 <div class="mb-3 py-2">
             
                 <input type="text" class="form-control" id="inputUser" aria-describedby="emailHelp" placeholder="Usuari">
-                    
+                <div class="invalid-feedback" id="errorUser"></div>  
                 </div>
                 <div class="mb-3 py-2">
                
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Selecciona la teva provincia</option>
+                    <select class="form-select" id="inputProvincia" aria-label="Default select example">
+                        <option selected value="">Selecciona la teva provincia</option>
                         <option value="barcelona">Barcelona</option>
                         <option value="girona">Girona</option>
                         <option value="tarragona">Tarragona</option>
                         <option value="lleida">Lleida</option>
                       </select>
-                      
+                      <div class="invalid-feedback" id="errorProvincia"></div>
                 </div>
 
                 <div class="mb-3 py-2">
                 
-                    <input type="email" class="form-control" id="inputMail" aria-describedby="emailHelp" placeholder="Email">
-                 
+                    <input type="text" class="form-control" id="inputMail" aria-describedby="emailHelp" placeholder="Email">
+                    <div class="invalid-feedback" id="errorMail"></div>
                 </div>
                 <div class="mb-3 py-2">
                    
                     <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
                     <div id="emailHelp" class="form-text py-1">La contrasenya ha de contenir una majúscula, un número i mínim 8 caràcters.</div>
+                    <div class="invalid-feedback" id="errorPass"></div>
                 </div>
                 
                 
@@ -77,15 +78,17 @@
                 <div class="mb-3 py-2">
                    
                         <input type="password" class="form-control" id="inputPasswordConfirm" placeholder="Confirma la contraseña">
-                </div>
+                        <div class="invalid-feedback" id="errorConfirm"></div>
+                    </div>
 
 
 
 
                 <div class="mb-3 form-check py-2">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Al crear un compte, acceptes els <b>Termes i Condicions</b> i la <b>Política de Privadesa</b>, incloent la <b>Política de Cookies</b>.</label>
-                  </div>
+                    <input type="checkbox" class="form-check-input" id="checkTerms">
+                    <label class="form-check-label" for="checkTerms">Al crear un compte, acceptes els <b>Termes i Condicions</b> i la <b>Política de Privadesa</b>, incloent la <b>Política de Cookies</b>.</label>
+                    <div class="invalid-feedback" id="errorCheck"></div>
+                </div>
                   <div class="d-grid py-3">
                     <button type="submit" class="btn btn-primary">Enviar</button>
                   </div>
