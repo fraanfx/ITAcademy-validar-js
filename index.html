@@ -4,32 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ex3 Validation</title>
             <!-- Bootstrap CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
     <section>
         <br>
-        <br>
         <hr>
         <div class="container">
             
             <div class="row">
                 <div class="col col-lg-6">
-                    <form>
-                        <h2 class="display-6 fw-bold text-center py-5">
-                            Inicia Sessió
-                        </h2>
+                    <h2 class="display-6 fw-bold text-center py-5">
+                        Inicia Sessió
+                    </h2>
+                    <form method="POST" id="loginForm" onsubmit="return loginCredentials()" name="loginForm">
+                        
                     <div class="mb-3  py-2">
                 
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
-                 
+                    <input type="text" class="form-control" name="inputEmail" id="inputEmail" aria-describedby="emailHelp" placeholder="Email">
+                    <div class="invalid-feedback" id="errorEmail"></div>
                     </div>
                     <div class="mb-3  py-2">
                    
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
-                    </div>
+                    <input type="password" class="form-control" id="inputPass" placeholder="Contraseña">
+                    <div class="invalid-feedback" id="errorPass"></div>
+                </div>
                     
                     <div class="d-grid  py-3">
                         <button type="submit" class="btn btn-primary">Enviar</button>
@@ -45,7 +46,7 @@
                     </h2>
                 <div class="mb-3 py-2">
             
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuari">
+                <input type="text" class="form-control" id="inputUser" aria-describedby="emailHelp" placeholder="Usuari">
                     
                 </div>
                 <div class="mb-3 py-2">
@@ -62,12 +63,12 @@
 
                 <div class="mb-3 py-2">
                 
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                    <input type="email" class="form-control" id="inputMail" aria-describedby="emailHelp" placeholder="Email">
                  
                 </div>
                 <div class="mb-3 py-2">
                    
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
                     <div id="emailHelp" class="form-text py-1">La contrasenya ha de contenir una majúscula, un número i mínim 8 caràcters.</div>
                 </div>
                 
@@ -75,7 +76,7 @@
 
                 <div class="mb-3 py-2">
                    
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirma la contraseña">
+                        <input type="password" class="form-control" id="inputPasswordConfirm" placeholder="Confirma la contraseña">
                 </div>
 
 

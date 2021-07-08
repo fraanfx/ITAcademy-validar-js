@@ -9,21 +9,44 @@ function loginCredentials() {
 
     var inputEmail = document.getElementById('inputEmail');
     var inputPassword = document.getElementById('inputPass');
+
+    if(inputEmail.value == "") {
+        inputEmail.classList.add("is-invalid");
+        document.getElementById("errorEmail").textContent = "Es un campo obligatorio";
+        acumErrors ++;
+    } else if(!validar_email(inputEmail.value)){
+        inputEmail.classList.add("is-invalid");
+        document.getElementById("errorEmail").textContent = "Formato de email incorrecto";
+        acumErrors ++;
+    }
+    if(inputPassword.value == "") {
+		inputPassword.classList.add("is-invalid");
+		document.getElementById("errorPass").textContent = "Es campo es obligatorio";
+		acumErrores ++;
+    }
+    if(acumErrors > 0){
+        return false;
+    }
+    else{
+        return true;
+    }
+
 }
 
 function registerCredentials() {
-    var acumErrors = 0;
+    var acumErrorsR = 0;
 
     form.classList.remove('is-invalid');
     
     var inputUser = document.getElementById('user');
+    var inputProvidence = document.getElementById('provincia')
 }
 
 
 
 
 
-form.addEventListener('blur', (event) => {
+formLogin.addEventListener('blur', (event) => {
 	console.log(event);
 	if(event.target.value!='') event.target.classList.remove('is-invalid');
     //registerValidate();
