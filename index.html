@@ -53,10 +53,10 @@
                
                     <select class="form-select" id="inputProvincia" aria-label="Default select example">
                         <option selected value="">Selecciona la teva provincia</option>
-                        <option value="barcelona">Barcelona</option>
-                        <option value="girona">Girona</option>
-                        <option value="tarragona">Tarragona</option>
-                        <option value="lleida">Lleida</option>
+                        <option value="Barcelona">Barcelona</option>
+                        <option value="Girona">Girona</option>
+                        <option value="Tarragona">Tarragona</option>
+                        <option value="Lleida">Lleida</option>
                       </select>
                       <div class="invalid-feedback" id="errorProvincia"></div>
                 </div>
@@ -100,6 +100,31 @@
         </div>
     </section>
 
+  
+  <!-- Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    
+    <div class="modal-dialog" style="z-index: 1000;" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">Modal title</h5>
+          <button type="button" class="close hideModal" id="loginModalClose" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modalBody">
+         
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary hideModal" id="loginModalClose" data-dismiss="modal">Tancar</button>
+          <button type="button" class="btn btn-primary hideModal">Continuar</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-backdrop hideModal" style="opacity: 0.1; z-index: 900;"></div>
+  </div>
+    
 
 
     <!-- JavaScript Bootstrap Bundle with Popper -->
