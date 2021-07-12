@@ -3,10 +3,27 @@ let loginModalClose = Array.from(document.getElementsByClassName("hideModal"));
 var loginBtnShow = document.getElementById("loginOpen");
 let modalTitle = document.getElementById("modalTitle");
 let modalBody = document.getElementById("modalBody");
-let arrayprueba = ["hola", "hola"];
-console.log(loginBtnShow);
-console.log(loginModalClose);
-console.log(loginModal);
+let arrEmails = ['fran.am95@gmail.com'];
+
+
+function checkEmailExist(arr, input){
+  console.log('entro')
+  let count = 0; 
+  arr.forEach(element => {
+    if(element == input){
+      console.log('existe')  
+      count++
+    }
+  });
+  if (count == 0){
+    return false;
+  }
+  else {
+    return true;
+  }
+}
+
+
 
 function showModal(title, obj) {
   loginModal.style.display = "block";
@@ -82,8 +99,7 @@ function registerCredentials() {
     document.getElementById("errorProvincia").textContent =
       "Es un camp obligatori";
     acumErrorsR++;
-  } else {
-  }
+  } 
   if (inputMail.value == "") {
     inputMail.classList.add("is-invalid");
     document.getElementById("errorMail").textContent = "Es un camp obligatori";
@@ -92,6 +108,12 @@ function registerCredentials() {
     inputMail.classList.add("is-invalid");
     document.getElementById("errorMail").textContent = "Email invalid";
     acumErrorsR++;
+  }else if(checkEmailExist(arrEmails, inputMail.value)){
+    inputMail.classList.add("is-invalid");
+    document.getElementById("errorMail").textContent = "Aquest email ja está registrat";
+    acumErrorsR++;
+  } else {
+    arrEmails.push(inputMail.value);
   }
 
   if (createPass.value == "") {
@@ -137,7 +159,7 @@ function registerCredentials() {
     </ul>
 
     `;
-
+    console.log(arrEmails)
     showModal("Registre", datos);
     return true;
   }
@@ -169,3 +191,4 @@ function validar_pass(pass) {
   var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
   return regex.test(pass) ? true : false;
 }
+
